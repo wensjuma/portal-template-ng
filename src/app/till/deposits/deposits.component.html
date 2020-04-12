@@ -1,0 +1,70 @@
+<div class="row">
+    <div class="col-md-4">
+        <h4 class="d-title"><b> Account Info</b></h4>
+        <hr>
+        <span class="badge badge-info">Account Number:</span>
+        <br>
+        <span class="badge badge-info">Customer Name:</span>
+        <br>
+        <span class="badge badge-info">Idno:</span>
+        <br>
+        <span class="badge badge-info">Phone Number:</span>
+        <br>
+        <span class="badge badge-info">Currency:</span>
+        <br>
+        <span class="badge badge-info"> Date Openned:</span>
+        <h4 class="d-title"><b> Account Details</b></h4>
+        <hr>
+        <span class="badge badge-warning">Available Balance: </span>
+        <br>
+        <span class="badge badge-warning"> Actual Balance:</span>
+    </div>
+    <div class="col-md-8">
+        <form [formGroup]="transactionForm">
+            <h4 class="d-title"><b> Transaction Information</b></h4>
+
+            <hr>
+            <div class="form-group">
+                <label for="account"> <b> Account Number</b></label>
+
+                <input type="text" formControlName="accountno" class="form__field" placeholder="Account Number" />
+                <button type="button" class="btn btn--primary btn--inside uppercase">Edit this</button>
+                <!-- &nbsp; &nbsp; <i class="fa fa-check-circle text-success fa-lg"></i> -->
+            </div>
+
+            <div class="form-group">
+                <label for="amount"> <b>Amount to deposit</b></label>
+
+                <input type="number" formControlName="amount" class="form__field" placeholder="Amount to deposit" />
+                <button (click)="loadDenominations()" type="button" class="btn btn--primary btn--inside uppercase">Edit
+                    this</button>
+                <!-- &nbsp; &nbsp; <i *ngIf="valid" class="fa fa-check-circle text-success fa-lg"></i>
+                <i *ngIf="!valid" class="fa fa-warning text-danger fa-lg"></i> -->
+            </div>
+            <br>
+            <h4 class="d-title"><b>Authentication</b></h4>
+            <hr>
+            <div class="form-group">
+                <label for="depositor"><b>Depositor name</b></label>
+                <br>
+                <input type="email" formControlName="depositername" class="form__field"
+                    placeholder="Enter Depositor Name" />
+                <button type="button" class="btn btn--primary btn--inside uppercase">Edit this</button>
+            </div>
+
+            <hr>
+            <button mat-raised-button (click)="sendInfo(message, 'Success!')" class="pull-right b-btn">Submit Deposit</button>
+            <br>
+            <br>
+        </form>
+        <style>
+            /deep/ .my-snack-bar {
+               
+                background-color: rgb(14, 219, 185);
+                color: white;
+                height: 50px;
+            }
+        </style>
+    </div>
+    <hr>
+</div>

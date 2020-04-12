@@ -1,0 +1,42 @@
+<div class="body">
+
+
+  <!-- main content -->
+  <div fxLayout="column" fxFlexFill>
+    <!-- top toolbar -->
+    <app-top-nav-bar class="portal-classic-top"></app-top-nav-bar>
+
+    <!-- page content -->
+
+
+    <div fxLayout="column" fxFlex="nogrow noshrink"
+      class="grayborderleft portal-classic-content-wrapper portal-content-bg portalpadding backgroundcolor">
+      
+      <div class="row backgroundwhite">
+       
+        <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3 grayborderrightlarge">
+          <app-sidenav-menu></app-sidenav-menu>
+          <!-- <portal-menu-sidenav class="portal-sidenav-theme " [sidenav]="leftSidenav"></portal-menu-sidenav> -->
+        </div>
+        <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9 col-xs-9">
+          <div fxFlexFill class="portal-classic-content" portalScrollTop>
+           <div *ngIf="routerLink !== '/dashboard'">
+            <!-- <app-breadcrumb></app-breadcrumb> -->
+           </div>
+           
+            <router-outlet></router-outlet>
+          
+            <!-- <portal-layout-loader></portal-layout-loader> -->
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+    <!-- footer -->
+
+
+  </div>
+
+  <app-footer></app-footer>
+</div>

@@ -1,0 +1,281 @@
+<div class="modal-header backgroundblue centered">
+    <h4 class="modal-title" id="modal-basic-title">
+      
+    </h4>
+    <!-- <button type="button" class="close" aria-label="Close" (click)="close()">
+      <span aria-hidden="true">&times;</span>
+    </button> -->
+</div>
+  <div class="modal-body">
+      <table class="table table-bordered" style=" text-align: center">
+          <thead>
+              <tr><th style="text-align: center; padding:0px; margin:1px;">Denomination</th><th style="text-align: center;padding:0px; margin:1px; font-size: 8">Units</th><th style="text-align: center;padding:0px; margin:1px; font-size: 8">Total</th></tr>
+          </thead>
+          <tbody id="membersBody" style="text-align: center; font-size: 8">
+              <tr style="height:12px;   text-align:center">
+                  <td style="padding:0px; margin:1px;  text-align:center"> N10000</td>
+                  <td  style="padding:0px; margin:0px; text-align:center"><input (click)="descN10000();"  type="button"  value=" - " style="padding:0px; margin:0px;"/>
+                      <input  [value]="n10000"   #t (change)="CalculateTotalUnits(t.value,'N10000');"  type="text" onkeyup="if (/\D/g.test(this.value))
+                                  this.value = this.value.replace(/\D/g, '')" style="width: 50px; padding:0px; margin:0px;   text-align:center" value="0"/>
+                      <input   type="button"  value=" + " style="padding:0px; margin:0px;" (click)="incN10000();"/> </td>
+                  <td  style="padding:0px; margin:0px; text-align:center"><input    onkeyup="if (/\D/g.test(this.value))
+                              this.value = this.value.replace(/\D/g, '')" type="text" [value]="n10000t| number" readonly style="width: 120px; padding:0px; margin:0px; background: #FFF;"/> </td>
+              </tr>
+              <tr style="height:12px;   text-align:center">
+                <td style="padding:0px; margin:1px;  text-align:center"> N5000</td>
+                <td  style="padding:0px; margin:0px; text-align:center"><input (click)="descN5000();"  type="button"  value=" - " style="padding:0px; margin:0px;"/>
+                    <input  [value]="n5000" #t1 (change)="CalculateTotalUnits(t1.value,'N5000');"  type="text" onkeyup="if (/\D/g.test(this.value))
+                                this.value = this.value.replace(/\D/g, '')" style="width: 50px; padding:0px; margin:0px;   text-align:center" value="0"/>
+                    <input   type="button"  value=" + " style="padding:0px; margin:0px;" (click)="incN5000();"/> </td>
+                <td  style="padding:0px; margin:0px; text-align:center"><input    onkeyup="if (/\D/g.test(this.value))
+                            this.value = this.value.replace(/\D/g, '')" type="text" [value]="n5000t| number" readonly style="width: 120px; padding:0px; margin:0px; background: #FFF;"/> </td>
+            </tr>
+            <tr style="height:12px;   text-align:center">
+                <td style="padding:0px; margin:1px;  text-align:center"> N2000</td>
+                <td  style="padding:0px; margin:0px; text-align:center"><input (click)="descN2000();"  type="button"  value=" - " style="padding:0px; margin:0px;"/>
+                    <input  [value]="n2000" #t2 (change)="CalculateTotalUnits(t2.value,'N2000');"  type="text" onkeyup="if (/\D/g.test(this.value))
+                                this.value = this.value.replace(/\D/g, '')" style="width: 50px; padding:0px; margin:0px;   text-align:center" value="0"/>
+                    <input   type="button"  value=" + " style="padding:0px; margin:0px;" (click)="incN2000();"/> </td>
+                <td  style="padding:0px; margin:0px; text-align:center"><input    onkeyup="if (/\D/g.test(this.value))
+                            this.value = this.value.replace(/\D/g, '')" type="text" [value]="n2000t| number" readonly style="width: 120px; padding:0px; margin:0px; background: #FFF;"/> </td>
+            </tr>
+            <tr style="height:12px;   text-align:center">
+                <td style="padding:0px; margin:1px;  text-align:center"> N1000</td>
+                <td  style="padding:0px; margin:0px; text-align:center"><input (click)="descN1000();"  type="button"  value=" - " style="padding:0px; margin:0px;"/>
+                    <input  [value]="n1000" #t3 (change)="CalculateTotalUnits(t3.value,'N1000');"  type="text" onkeyup="if (/\D/g.test(this.value))
+                                this.value = this.value.replace(/\D/g, '')" style="width: 50px; padding:0px; margin:0px;   text-align:center" value="0"/>
+                    <input   type="button"  value=" + " style="padding:0px; margin:0px;" (click)="incN1000();"/> </td>
+                <td  style="padding:0px; margin:0px; text-align:center"><input    onkeyup="if (/\D/g.test(this.value))
+                            this.value = this.value.replace(/\D/g, '')" type="text" [value]="n1000t| number" readonly style="width: 120px; padding:0px; margin:0px; background: #FFF;"/> </td>
+            </tr>
+            <tr style="height:12px;   text-align:center">
+                <td style="padding:0px; margin:1px;  text-align:center"> N500</td>
+                <td  style="padding:0px; margin:0px; text-align:center"><input (click)="descN500();"  type="button"  value=" - " style="padding:0px; margin:0px;"/>
+                    <input  [value]="n500" #t4 (change)="CalculateTotalUnits(t4.value,'N500');"  type="text" onkeyup="if (/\D/g.test(this.value))
+                                this.value = this.value.replace(/\D/g, '')" style="width: 50px; padding:0px; margin:0px;   text-align:center" value="0"/>
+                    <input   type="button"  value=" + " style="padding:0px; margin:0px;" (click)="incN500();"/> </td>
+                <td  style="padding:0px; margin:0px; text-align:center"><input    onkeyup="if (/\D/g.test(this.value))
+                            this.value = this.value.replace(/\D/g, '')" type="text" [value]="n500t| number" readonly style="width: 120px; padding:0px; margin:0px; background: #FFF;"/> </td>
+            </tr>
+            <tr style="height:12px;   text-align:center">
+                <td style="padding:0px; margin:1px;  text-align:center"> C500</td>
+                <td  style="padding:0px; margin:0px; text-align:center"><input (click)="descc500();"  type="button"  value=" - " style="padding:0px; margin:0px;"/>
+                    <input  [value]="c500" #t5 (change)="CalculateTotalUnits(t5.value,'C500');"  type="text" onkeyup="if (/\D/g.test(this.value))
+                                this.value = this.value.replace(/\D/g, '')" style="width: 50px; padding:0px; margin:0px;   text-align:center" value="0"/>
+                    <input   type="button"  value=" + " style="padding:0px; margin:0px;" (click)="incc500();"/> </td>
+                <td  style="padding:0px; margin:0px; text-align:center"><input    onkeyup="if (/\D/g.test(this.value))
+                            this.value = this.value.replace(/\D/g, '')" type="text" [value]="c500t| number" readonly style="width: 120px; padding:0px; margin:0px; background: #FFF;"/> </td>
+            </tr>
+              <tr style="height:12px;">
+                  <td style="padding:0px; margin:1px;  text-align:center">C200</td>
+                  <td  style="padding:0px; margin:0px; text-align:center"><input (click)="descc200();"  type="button"  value=" - " style="padding:0px; margin:0px;"/>
+                    <input  [value]="c200" #t6 (change)="CalculateTotalUnits(t6.value,'C200');"  type="text" onkeyup="if (/\D/g.test(this.value))
+                                this.value = this.value.replace(/\D/g, '')" style="width: 50px; padding:0px; margin:0px;   text-align:center" value="0"/>
+                    <input   type="button"  value=" + " style="padding:0px; margin:0px;" (click)="incc200();"/> </td>
+                <td  style="padding:0px; margin:0px; text-align:center"><input    onkeyup="if (/\D/g.test(this.value))
+                            this.value = this.value.replace(/\D/g, '')" type="text" [value]="c200t| number" readonly style="width: 120px; padding:0px; margin:0px; background: #FFF;"/> </td>
+            </tr>
+              <tr style="height:12px;">
+                  <td style="padding:0px; margin:1px;  text-align:center">C100</td>
+                  <td  style="padding:0px; margin:0px; text-align:center"><input (click)="descc100();"  type="button"  value=" - " style="padding:0px; margin:0px;"/>
+                    <input  [value]="c100" #t7 (change)="CalculateTotalUnits(t7.value,'C100');"  type="text" onkeyup="if (/\D/g.test(this.value))
+                                this.value = this.value.replace(/\D/g, '')" style="width: 50px; padding:0px; margin:0px;   text-align:center" value="0"/>
+                    <input   type="button"  value=" + " style="padding:0px; margin:0px;" (click)="incc100();"/> </td>
+                <td  style="padding:0px; margin:0px; text-align:center"><input    onkeyup="if (/\D/g.test(this.value))
+                            this.value = this.value.replace(/\D/g, '')" type="text" [value]="c100t| number" readonly style="width: 120px; padding:0px; margin:0px; background: #FFF;"/> </td>
+              </tr>
+              <tr style="height:12px;">
+                  <td style="padding:0px; margin:1px;  text-align:center">C50</td>
+                  <td  style="padding:0px; margin:0px; text-align:center"><input (click)="descc50();"  type="button"  value=" - " style="padding:0px; margin:0px;"/>
+                    <input  [value]="c50" #t8 (change)="CalculateTotalUnits(t8.value,'C50');"  type="text" onkeyup="if (/\D/g.test(this.value))
+                                this.value = this.value.replace(/\D/g, '')" style="width: 50px; padding:0px; margin:0px;   text-align:center" value="0"/>
+                    <input   type="button"  value=" + " style="padding:0px; margin:0px;" (click)="incc50();"/> </td>
+                <td  style="padding:0px; margin:0px; text-align:center"><input    onkeyup="if (/\D/g.test(this.value))
+                            this.value = this.value.replace(/\D/g, '')" type="text" [value]="c50t| number" readonly style="width: 120px; padding:0px; margin:0px; background: #FFF;"/> </td>
+            </tr>
+            <tr style="height:12px;">
+                <td style="padding:0px; margin:1px;  text-align:center">C20</td>
+                <td  style="padding:0px; margin:0px; text-align:center"><input (click)="descc20();"  type="button"  value=" - " style="padding:0px; margin:0px;"/>
+                  <input  [value]="c20" #t9 (change)="CalculateTotalUnits(t9.value,'C20');"  type="text" onkeyup="if (/\D/g.test(this.value))
+                              this.value = this.value.replace(/\D/g, '')" style="width: 50px; padding:0px; margin:0px;   text-align:center" value="0"/>
+                  <input   type="button"  value=" + " style="padding:0px; margin:0px;" (click)="incc20();"/> </td>
+              <td  style="padding:0px; margin:0px; text-align:center"><input    onkeyup="if (/\D/g.test(this.value))
+                          this.value = this.value.replace(/\D/g, '')" type="text" [value]="c20t| number" readonly style="width: 120px; padding:0px; margin:0px; background: #FFF;"/> </td>
+          </tr>
+          <tr style="height:12px;">
+             <td style="padding:0px; margin:1px;  text-align:center">C10</td>
+             <td  style="padding:0px; margin:0px; text-align:center"><input (click)="descc10();"  type="button"  value=" - " style="padding:0px; margin:0px;"/>
+              <input  [value]="c10" #t10 (change)="CalculateTotalUnits(t10.value,'C10');"  type="text" onkeyup="if (/\D/g.test(this.value))
+                          this.value = this.value.replace(/\D/g, '')" style="width: 50px; padding:0px; margin:0px;   text-align:center" value="0"/>
+              <input   type="button"  value=" + " style="padding:0px; margin:0px;" (click)="incc10();"/> </td>
+              <td  style="padding:0px; margin:0px; text-align:center"><input    onkeyup="if (/\D/g.test(this.value))
+                      this.value = this.value.replace(/\D/g, '')" type="text" [value]="c10t| number" readonly style="width: 120px; padding:0px; margin:0px; background: #FFF;"/> </td>
+            </tr>
+            <tr style="height:12px;">
+                <td style="padding:0px; margin:1px;  text-align:center">C5</td>
+                <td  style="padding:0px; margin:0px; text-align:center"><input (click)="descc5();"  type="button"  value=" - " style="padding:0px; margin:0px;"/>
+                  <input  [value]="c5" #t12 (change)="CalculateTotalUnits(t12.value,'C5');"  type="text" onkeyup="if (/\D/g.test(this.value))
+                              this.value = this.value.replace(/\D/g, '')" style="width: 50px; padding:0px; margin:0px;   text-align:center" value="0"/>
+                  <input   type="button"  value=" + " style="padding:0px; margin:0px;" (click)="incc5();"/> </td>
+              <td  style="padding:0px; margin:0px; text-align:center"><input    onkeyup="if (/\D/g.test(this.value))
+                          this.value = this.value.replace(/\D/g, '')" type="text" [value]="c5t| number" readonly style="width: 120px; padding:0px; margin:0px; background: #FFF;"/> </td>
+                </tr>
+                <tr style="height:12px;">
+                    <td style="padding:0px; margin:1px;  text-align:center">C1</td>
+                    <td  style="padding:0px; margin:0px; text-align:center"><input (click)="descc1();"  type="button"  value=" - " style="padding:0px; margin:0px;"/>
+                     <input  [value]="c1" #t13 (change)="CalculateTotalUnits(t13.value,'C1');"  type="text" onkeyup="if (/\D/g.test(this.value))
+                                 this.value = this.value.replace(/\D/g, '')" style="width: 50px; padding:0px; margin:0px;   text-align:center" value="0"/>
+                     <input   type="button"  value=" + " style="padding:0px; margin:0px;" (click)="incc1();"/> </td>
+                     <td  style="padding:0px; margin:0px; text-align:center"><input    onkeyup="if (/\D/g.test(this.value))
+                             this.value = this.value.replace(/\D/g, '')" type="text" [value]="c1t| number" readonly style="width: 120px; padding:0px; margin:0px; background: #FFF;"/> </td>
+                </tr>
+                <tr style="height:12px;">
+                    <td style="padding:0px; margin:1px;  text-align:center">CT0.01</td>
+                    <td  style="padding:0px; margin:0px; text-align:center"><input (click)="descct0_01();"  type="button"  value=" - " style="padding:0px; margin:0px;"/>
+                     <input  [value]="ct0_01" #t14 (change)="CalculateTotalUnits(t14.value,'CT0_01');"  type="text" onkeyup="if (/\D/g.test(this.value))
+                                 this.value = this.value.replace(/\D/g, '')" style="width: 50px; padding:0px; margin:0px;   text-align:center" value="0"/>
+                     <input   type="button"  value=" + " style="padding:0px; margin:0px;" (click)="incct0_01();"/> </td>
+                     <td  style="padding:0px; margin:0px; text-align:center"><input    onkeyup="if (/\D/g.test(this.value))
+                             this.value = this.value.replace(/\D/g, '')" type="text" [value]="ct0_01t| number : '1.2-2'" readonly style="width: 120px; padding:0px; margin:0px; background: #FFF;"/> </td>
+                </tr>
+          </tbody>
+      </table>
+   <div *ngIf="showdamaged">
+      <table class="table table-bordered" style=" text-align: center">
+          <thead style="display: none">
+              <tr><th style="text-align: center; padding:0px; margin:1px;">Denomination</th><th style="text-align: center;padding:0px; margin:1px; font-size: 8">Units</th><th style="text-align: center;padding:0px; margin:1px; font-size: 8">Total</th></tr>
+          </thead>
+          <tbody id="membersBody" style="text-align: center; font-size: 8">
+              <tr style="height:12px;   text-align:center">
+                  <td style="padding:0px; margin:1px;  text-align:center"> M10000</td>
+                  <td  style="padding:0px; margin:0px; text-align:center"><input  id="btnminusM10000" onclick="DecrementUnits('M10000');" name="btnminusM10000" type="button"  value=" - " style="padding:0px; margin:0px;"/>
+                      <input   name="M10000count" id="M10000count" on#t (change)="CalculateTotalUnits(t.value,'M10000');"  type="text" onkeyup="if (/\D/g.test(this.value))
+                                  this.value = this.value.replace(/\D/g, '')" style="width: 50px; padding:0px; margin:0px;   text-align:center" value="0"/>
+                      <input  id="btnplusM10000" name="btnplusM10000" type="button"  value=" + " style="padding:0px; margin:0px;" onclick="IncrementUnits('M10000');"/> </td>
+                  <td  style="padding:0px; margin:0px; text-align:center"><input   name="M10000total" id="M10000total" onkeyup="if (/\D/g.test(this.value))
+                              this.value = this.value.replace(/\D/g, '')" type="text" readonly style="width: 120px; padding:0px; margin:0px; background: #FFF;"/> </td>
+              </tr>
+              <tr style="height:12px;">
+                  <td style="padding:0px; margin:1px;  text-align:center">M5000</td>
+                  <td style="padding:0px; margin:0px; text-align:center"><input  id="btnminusM5000" onclick="DecrementUnits('M5000');" name="btnminusM5000" type="button"  value=" - " style="padding:0px; margin:0px;"/>
+                      <input   name="M5000count" id="M5000count" onkeyup="if (/\D/g.test(this.value))
+                                  this.value = this.value.replace(/\D/g, '')"  on#t (change)="CalculateTotalUnits(t.value,'M5000');" type="text" style="width: 50px; padding:0px; margin:0px;   text-align:center" value="0"/>
+                      <input  id="btnplusM5000" name="btnplusM5000" type="button"  value=" + " style="padding:0px; margin:0px;" onclick="IncrementUnits('M5000');"/> </td>
+                  <td style="padding:0px; margin:0px; text-align:center"><input   name="M5000total" onkeyup="if (/\D/g.test(this.value))
+                              this.value = this.value.replace(/\D/g, '')" id="M5000total" readonly  type="text" style="width: 120px; padding:0px; margin:0px; background: #FFF;"/> </td>
+              </tr>
+              <tr style="height:12px;">
+                  <td style="padding:0px; margin:1px;  text-align:center">M2000</td>
+                  <td  style="padding:0px; margin:1px;  text-align:center"><input  id="btnminusM2000" onclick="DecrementUnits('M2000');" name="btnminusM2000" type="button"  value=" - " style="padding:0px; margin:0px;"/>
+                      <input   name="M2000count" id="M2000count"  type="text" onkeyup="if (/\D/g.test(this.value))
+                                  this.value = this.value.replace(/\D/g, '')"  on#t (change)="CalculateTotalUnits(t.value,'M2000');" style="width: 50px; padding:0px; margin:0px;   text-align:center" value="0"/>
+                      <input  id="btnplusM2000" name="btnplusM2000" type="button"  value=" + " style="padding:0px; margin:0px;" onclick="IncrementUnits('M2000');"/> </td>
+                  <td style="padding:0px; margin:1px;  text-align:center"><input   name="M2000total" onkeyup="if (/\D/g.test(this.value))
+                              this.value = this.value.replace(/\D/g, '')" id="M2000total" readonly type="text" style="width: 120px; padding:0px; margin:0px; background: #FFF;"/> </td>
+              </tr>
+              <tr style="height:12px;">
+                  <td style="padding:0px; margin:1px;  text-align:center">M1000</td>
+                  <td style="padding:0px; margin:1px;  text-align:center"><input  id="btnminusM1000" onclick="DecrementUnits('M1000');" name="btnminusM1000" type="button"  value=" - " style="padding:0px; margin:0px;"/>
+                      <input   name="M1000count" id="M1000count"  type="text" onkeyup="if (/\D/g.test(this.value))
+                                  this.value = this.value.replace(/\D/g, '')"  on#t (change)="CalculateTotalUnits(t.value,'M1000');" style="width: 50px; padding:0px; margin:0px;   text-align:center" value="0"/>
+                      <input  id="btnplusM1000" name="btnplusM1000" type="button"  value=" + " style="padding:0px; margin:0px;" onclick="IncrementUnits('M1000');"/> </td>
+                  <td style="padding:0px; margin:1px;  text-align:center"><input   name="M1000total" onkeyup="if (/\D/g.test(this.value))
+                              this.value = this.value.replace(/\D/g, '')" id="M1000total" readonly type="text" style="width: 120px; padding:0px; margin:0px; background: #FFF;"/> </td>
+              </tr>
+              <tr style="height:12px;">
+                  <td style="padding:0px; margin:1px;  text-align:center">M500</td>
+                  <td style="padding:0px; margin:1px;  text-align:center"><input  id="btnminusM500" onclick="DecrementUnits('M500');" name="btnminusM500" type="button"  value=" - " style="padding:0px; margin:0px;"/>
+                      <input   name="M500count" id="M500count"  type="text" onkeyup="if (/\D/g.test(this.value))
+                                  this.value = this.value.replace(/\D/g, '')"  on#t (change)="CalculateTotalUnits(t.value,'M500');" style="width: 50px; padding:0px; margin:0px;   text-align:center" value="0"/>
+                      <input  id="btnplusM5000" name="btnplusM500" type="button"  value=" + " style="padding:0px; margin:0px;" onclick="IncrementUnits('M500');"/> </td>
+                  <td style="padding:0px; margin:1px;  text-align:center"><input   name="M500total" onkeyup="if (/\D/g.test(this.value))
+                              this.value = this.value.replace(/\D/g, '')" id="M500total" readonly type="text" style="width: 120px; padding:0px; margin:0px; background: #FFF;"/> </td>
+              </tr>
+              <tr style="height:12px;">
+                  <td style="padding:0px; margin:1px;  text-align:center">CD500</td>
+                  <td style="padding:0px; margin:1px;  text-align:center"><input  id="btnminusCD500" onclick="DecrementUnits('CD500');" name="btnminusCD500" type="button"  value=" - " style="padding:0px; margin:0px;"/>
+                      <input   name="CD500count" id="CD500count"  type="text" onkeyup="if (/\D/g.test(this.value))
+                                  this.value = this.value.replace(/\D/g, '')"  on#t (change)="CalculateTotalUnits(t.value,'CD500');" style="width: 50px; padding:0px; margin:0px;   text-align:center" value="0"/>
+                      <input  id="btnplusCD500" name="btnplusCD500" type="button"  value=" + " style="padding:0px; margin:0px;" onclick="IncrementUnits('CD500');"/> </td>
+                  <td style="padding:0px; margin:1px;  text-align:center"><input   name="CD500total" onkeyup="if (/\D/g.test(this.value))
+                              this.value = this.value.replace(/\D/g, '')" id="CD500total" readonly type="text" style="width: 120px; padding:0px; margin:0px; background: #FFF;"/> </td>
+              </tr>
+              <tr style="height:12px;">
+                  <td style="padding:0px; margin:1px;  text-align:center">CD200</td>
+                  <td style="padding:0px; margin:1px;  text-align:center"><input  id="btnminusCD200" onclick="DecrementUnits('CD200');" name="btnminusCD200" type="button"  value=" - " style="padding:0px; margin:0px;"/>
+                      <input   name="CD200count" id="CD200count"  type="text"  on#t (change)="CalculateTotalUnits(t.value,'CD200');" style="width: 50px; padding:0px; margin:0px;   text-align:center" value="0"/>
+                      <input  id="btnplusN2000" name="btnplusCD200" type="button"  value=" + " style="padding:0px; margin:0px;" onclick="IncrementUnits('CD200');"/> </td>
+                  <td style="padding:0px; margin:1px;  text-align:center"><input   name="CD200total" readonly id="CD200total"  type="text" style="width: 120px; padding:0px; background: #FFF; margin:0px;"/> </td>
+              </tr>
+              <tr style="height:12px;">
+                  <td style="padding:0px; margin:1px;  text-align:center">CD100</td>
+                  <td style="padding:0px; margin:1px;  text-align:center"><input  id="btnminusCD100" onclick="DecrementUnits('CD100');" name="btnminusCD100" type="button"  value=" - " style="padding:0px; margin:0px;"/>
+                      <input   name="CD100count" id="CD100count"  type="text" onkeyup="if (/\D/g.test(this.value))
+                                  this.value = this.value.replace(/\D/g, '')" on#t (change)="CalculateTotalUnits(t.value,'CD100');" style="width: 50px; padding:0px; margin:0px;   text-align:center" value="0"/>
+                      <input  id="btnplusCD100" name="btnplusCD100" type="button"  value=" + " style="padding:0px; margin:0px;" onclick="IncrementUnits('CD100');"/> </td>
+                  <td style="padding:0px; margin:1px;  text-align:center"><input   name="CD100total" onkeyup="if (/\D/g.test(this.value))
+                              this.value = this.value.replace(/\D/g, '')" id="CD100total" readonly type="text" style="width: 120px; padding:0px; margin:0px; background: #FFF;"/> </td>
+              </tr>
+              <tr style="height:12px;">
+                  <td style="padding:0px; margin:1px;  text-align:center">CD50</td>
+                  <td style="padding:0px; margin:1px;  text-align:center"><input  id="btnminusCD50" onclick="DecrementUnits('CD50');" name="btnminusCD50" type="button"  value=" - " style="padding:0px; margin:0px;"/>
+                      <input  class="form-control"  name="CD50count" id="CD50count" onkeyup="if (/\D/g.test(this.value))
+                                  this.value = this.value.replace(/\D/g, '')" on#t (change)="CalculateTotalUnits(t.value,'CD50');"  type="text" style="width: 50px; padding:0px; margin:0px;   text-align:center" value="0"/>
+                      <input  id="btnplusCD50" class="btn btn-xm btn-info" name="btnplusCD50" type="button"  value=" + " style="padding:0px; margin:0px;" onclick="IncrementUnits('CD50');"/> </td>
+                  <td style="padding:0px; margin:1px;  text-align:center"><input   name="CD50total" onkeyup="if (/\D/g.test(this.value))
+                              this.value = this.value.replace(/\D/g, '')" id="CD50total" readonly type="text" style="width: 120px; padding:0px; margin:0px; background: #FFF;"/> </td>
+              </tr>
+              <tr style="height:12px;">
+                  <td style="padding:0px; margin:1px;  text-align:center">CD20</td>
+                  <td style="padding:0px; margin:1px;  text-align:center"><input  id="btnminusCD20" onclick="DecrementUnits('CD20');" name="btnminusCD20" type="button"  value=" - " style="padding:0px; margin:0px;"/>
+                      <input   name="CD20count" id="CD20count"  type="text" onkeyup="if (/\D/g.test(this.value))
+                                  this.value = this.value.replace(/\D/g, '')" on#t (change)="CalculateTotalUnits(t.value,'CD20');" style="width: 50px; padding:0px; margin:0px;   text-align:center" value="0"/>
+                      <input  id="btnplusCD20" name="btnplusCD20" type="button"  value=" + " style="padding:0px; margin:0px;" onclick="IncrementUnits('CD20');"/> </td>
+                  <td style="padding:0px; margin:1px;  text-align:center"><input   name="CD20total" onkeyup="if (/\D/g.test(this.value))
+                              this.value = this.value.replace(/\D/g, '')" id="CD20total" readonly type="text" style="width: 120px; padding:0px; margin:0px; background: #FFF;"/> </td>
+              </tr>
+              <!-- <tr style="height:12px;">
+                  <td style="padding:0px; margin:1px;  text-align:center">CD10</td>
+                  <td style="padding:0px; margin:1px;  text-align:center"><input  id="btnminusCD10" onclick="DecrementUnits('CD10');" name="btnminusCD10" type="button"  value=" - " style="padding:0px; margin:0px;"/>
+                      <input   name="CD10count" id="CD10count"  type="text" onkeyup="if (/\D/g.test(this.value))
+                                  this.value = this.value.replace(/\D/g, '')"  on#t (change)="CalculateTotalUnits(t.value,'CD10');" style="width: 50px; padding:0px; margin:0px;   text-align:center" value="0"/>
+                      <input  id="btnplusCD10" name="btnplusCD10" type="button"  value=" + " style="padding:0px; margin:0px;" onclick="IncrementUnits('CD10');"/> </td>
+                  <td style="padding:0px; margin:1px;  text-align:center"><input   name="CD10total" onkeyup="if (/\D/g.test(this.value))
+                              this.value = this.value.replace(/\D/g, '')" id="CD10total" readonly type="text" style="width: 120px; padding:0px; margin:0px; background: #FFF;"/> </td>
+              </tr>
+              <tr style="height:12px;">
+                  <td style="padding:0px; margin:1px;  text-align:center">CD5</td>
+                  <td style="padding:0px; margin:1px;  text-align:center"><input  id="btnminusCD5" onclick="DecrementUnits('CD5');" name="btnminusCD5" type="button"  value=" - " style="padding:0px; margin:0px;"/>
+                      <input   name="CD5count" id="CD5count"  type="text" onkeyup="if (/\D/g.test(this.value))
+                                  this.value = this.value.replace(/\D/g, '')" on#t (change)="CalculateTotalUnits(t.value,'CD5');" style="width: 50px; padding:0px; margin:0px;   text-align:center" value="0"/>
+                      <input  id="btnplusCD5" name="btnplusCD5" type="button"  value=" + " style="padding:0px; margin:0px;" onclick="IncrementUnits('CD5');"/> </td>
+                  <td style="padding:0px; margin:1px;  text-align:center"><input   name="CD5total" onkeyup="if (/\D/g.test(this.value))
+                              this.value = this.value.replace(/\D/g, '')" id="CD5total" readonly type="text" style="width: 120px; padding:0px; margin:0px; background: #FFF;"/> </td>
+              </tr>
+              <tr style="height:12px;">
+                  <td style="padding:0px; margin:1px;  text-align:center">CD1</td>
+                  <td style="padding:0px; margin:1px;  text-align:center"><input  id="btnminusCD1" onclick="DecrementUnits('CD1');" name="btnminusCD1" type="button"  value=" - " style="padding:0px; margin:0px;"/>
+                      <input   name="CD1count" id="CD1count" onkeyup="if (/\D/g.test(this.value))
+                                  this.value = this.value.replace(/\D/g, '')"   on#t (change)="CalculateTotalUnits(t.value,'CD1');" type="text" style="width: 50px; padding:0px; margin:0px;   text-align:center" value="0"/>
+                      <input  id="btnplusCD1" name="btnplusCD1" type="button"  value=" + " style="padding:0px; margin:0px;" onclick="IncrementUnits('CD1');"/> </td>
+                  <td style="padding:0px; margin:1px;  text-align:center"><input   name="CD1total" onkeyup="if (/\D/g.test(this.value))
+                              this.value = this.value.replace(/\D/g, '')" id="CD1total" readonly type="text" style="width: 120px; padding:0px; margin:0px; background: #FFF;"/> </td>
+              </tr> -->
+
+
+          </tbody>
+      </table>
+   </div>
+  </div>
+  <div class="row">
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+             <span class="badge badge-info">Total Amount</span>
+        </div>
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+               <input  class="form-control"  type="text" [value]="total | number : '1.2-2'" readonly="readonly"/> 
+           </div>
+     </div>
+  <div class="modal-footer paddingbottom">
+     <button type="button" class="btn btn-primary" (click)="save()">Save</button>
+     <button type="button" class="btn btn-outline-dark inline" (click)="close()">Close</button>
+  </div>

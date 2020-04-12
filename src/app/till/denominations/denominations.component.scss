@@ -1,0 +1,25 @@
+.row{
+    width: 100% !important;
+    padding: 2% !important;
+}
+table{
+    width: 100%;
+    margin: 0;
+    border: 0;
+}
+td,th{
+    text-align: center !important;
+}
+.center{
+    width: 150px;
+      margin: 20px auto;
+    height: 5px;
+      
+    }
+    .modal-header,.modal-body,.modal-footer {
+        padding-bottom: 0;
+        padding-top: 0;
+    }
+.paddingbottom{
+    padding-bottom: 16px;
+}

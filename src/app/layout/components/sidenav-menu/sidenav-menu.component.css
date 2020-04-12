@@ -1,0 +1,33 @@
+.portal-sidnav-menu{
+    /* width: 25% !important; */
+    /*color: #f8f8f8; rgb(130, 186, 41); 
+    color: rgb(130, 186, 47) !important;*/
+    color: #ffffff !important;
+    background-color: rgb(0, 61, 76);
+    height: 100% !important;
+    /* height: 100% !important; */
+    font-size: 15pt !important;
+    /* font-weight: lighter !important; */
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
+}
+/* .portal-sidnav-men{
+    color: rgb(130, 186, 47) !important;
+} */
+mat-expansion-panel{
+    background-color: rgb(0, 61, 76) !important;
+   
+}
+.menutitle, .subMenuTitle{
+    color: #ffffff !important;
+    font-size: 13pt !important;
+    font-weight: lighter;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.subMenuTitle{
+    padding: 10px !important;
+    font-size: 10pt !important;
+    background-color:  rgb(1, 121, 151);
+    font-weight: lighter;
+    color: #ffffff !important;
+    font-family: Arial, Helvetica, sans-serif;
+}
