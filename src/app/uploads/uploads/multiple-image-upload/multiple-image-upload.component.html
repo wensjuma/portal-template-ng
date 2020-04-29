@@ -1,0 +1,32 @@
+<h2>multiple-image-upload works!</h2>
+<form [formGroup]="myForm" (ngSubmit)="submit()">
+
+    <div class="form-group">
+        <label for="name">Name</label>
+        <input formControlName="name" id="name" type="text" class="form-control">
+        <div *ngIf="f.name.touched && f.name.invalid" class="alert alert-danger">
+            <div *ngIf="f.name.errors.required">Name is required.</div>
+            <div *ngIf="f.name.errors.minlength">Name should be 3 character.</div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="file">File</label>
+        <hr>
+        <button *ngIf="images.length === 0" mat-raised-button color="primary" (click)="upload.click()">Upload</button>
+        <button mat-raised-button color="primary" (click)="upload.click()" *ngIf="images.length >= 1">Another
+            image</button>
+        <input #upload hidden formControlName="file" id="file" type="file" class="form-control" multiple=""
+            (change)="onFileChange($event)">
+        <div *ngIf="f.file.touched && f.file.invalid" class="alert alert-danger">
+            <div *ngIf="f.file.errors.required">File is required.</div>
+        </div>
+    </div>
+
+    <br />
+    <span *ngFor='let url of displayImages'>
+        <img [src]="url" height="150" width="200px" style="margin: 3px;">
+        <i class="btn" (click)="remove(url)" class="fa fa-remove text-danger"></i>
+    </span><br>
+    <button mat-raised-button color='primary' type="submit">Submit</button>
+</form>
