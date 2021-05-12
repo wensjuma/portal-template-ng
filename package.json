@@ -31,7 +31,7 @@
     "ag-grid-angular": "^23.0.3",
     "ag-grid-community": "^23.0.2",
     "angular-jwt": "github:auth0/angular-jwt",
-    "chart.js": "^2.9.3",
+    "chart.js": "^2.9.4",
     "chartjs-plugin-annotation": "^0.5.7",
     "file-saver": "^2.0.2",
     "font-awesome": "^4.7.0",
