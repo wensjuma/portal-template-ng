@@ -49,7 +49,7 @@
     "ts-event-bus": "^2.1.2",
     "tslib": "^1.9.0",
     "vertx3-eventbus-client": "^3.9.0",
-    "xlsx": "^0.15.6",
+    "xlsx": "^0.17.0",
     "zone.js": "~0.9.1"
   },
   "devDependencies": {
